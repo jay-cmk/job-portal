@@ -21,7 +21,7 @@ const JobSeekerLogin = () => {
         setMessage("");
         setLoading(true); 
 
-        const apiUrl = `${backendUrl}/api/auth${role === "provider" ? "provider" : ""}/${isSignup ? "signup" : "login"}`;
+        const apiUrl = `https://job-portal-3-ensm.onrender.com/api/auth${role === "provider" ? "provider" : ""}/${isSignup ? "signup" : "login"}`;
 
         try {
             const { data } = await axios.post(apiUrl, formData);
