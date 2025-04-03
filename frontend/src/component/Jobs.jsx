@@ -22,7 +22,7 @@ const Jobs = () => {
     setError("");
 
     try {
-      const response = await axios.get("http://localhost:3000/api/job/allJobs");
+      const response = await axios.get("https://job-portal-3-ensm.onrender.com/api/job/allJobs");
       const jobsData = response.data.jobs || response.data.recruiters || [];
       setAllJobs(jobsData);
       setJobs(jobsData);
@@ -72,7 +72,7 @@ const Jobs = () => {
       setMessage("");
 
       await axios.post(
-        "http://localhost:3000/api/apply/applications",
+        "https://job-portal-3-ensm.onrender.com/api/apply/applications",
         { candidateId, jobId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

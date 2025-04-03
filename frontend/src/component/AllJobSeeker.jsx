@@ -14,7 +14,7 @@ const AllJobSeeker = () => {
 
   const fetchJobSeekers = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/user");
+      const response = await axios.get("https://job-portal-3-ensm.onrender.com/api/user");
       setJobSeekers(response.data);
     } catch (err) {
       setError("Failed to fetch job seekers.");
@@ -25,7 +25,7 @@ const AllJobSeeker = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/user/${id}`);
+      await axios.delete(`https://job-portal-3-ensm.onrender.com/api/user/${id}`);
       setJobSeekers(jobSeekers.filter((seeker) => seeker._id !== id));
     } catch (err) {
       setError("Failed to delete job seeker.");
@@ -43,7 +43,7 @@ const AllJobSeeker = () => {
 
   const handleUpdate = async (id) => {
     try {
-      await axios.put(`http://localhost:3000/api/user/${id}`, updatedData);
+      await axios.put(`https://job-portal-3-ensm.onrender.com/api/user/${id}`, updatedData);
       setJobSeekers(jobSeekers.map((seeker) => (seeker._id === id ? updatedData : seeker)));
       setEditSeeker(null);
     } catch (err) {

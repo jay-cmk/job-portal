@@ -32,7 +32,7 @@ const ProviderProfile = () => {
 
     try {
       await axios.post(
-        `http://localhost:3000/api/job/${value}`,
+        `https://job-portal-3-ensm.onrender.com/api/job/${value}`,
         { ...jobData, value },
         { headers: { "Content-Type": "application/json" } }
       );

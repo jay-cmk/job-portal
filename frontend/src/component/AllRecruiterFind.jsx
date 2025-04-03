@@ -15,7 +15,7 @@ const AllRecruiterFind = () => {
 
   const fetchRecruiters = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/recruiter");
+      const response = await axios.get("https://job-portal-3-ensm.onrender.com/api/recruiter");
       setRecruiters(response.data.recruiters);
     } catch (err) {
       setError("Failed to fetch recruiters.");
@@ -35,7 +35,7 @@ const AllRecruiterFind = () => {
     if (!window.confirm("Are you sure you want to delete this recruiter?")) return;
 
     try {
-      await axios.delete(`http://localhost:3000/api/recruiter/${id}`);
+      await axios.delete(`https://job-portal-3-ensm.onrender.com/api/recruiter/${id}`);
       setRecruiters(recruiters.filter((rec) => rec._id !== id));
     } catch (error) {
       console.error("Delete Error:", error);
@@ -50,7 +50,7 @@ const AllRecruiterFind = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/api/recruiter/${editRecruiter._id}`, editRecruiter);
+      await axios.put(`https://job-portal-3-ensm.onrender.com/api/recruiter/${editRecruiter._id}`, editRecruiter);
       setRecruiters(recruiters.map((rec) => (rec._id === editRecruiter._id ? editRecruiter : rec)));
       setShowModal(false);
     } catch (error) {

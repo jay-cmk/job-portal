@@ -28,7 +28,7 @@ const SeekerProfile = () => {
     setMessage("");
 
     try {
-      await axios.post("http://localhost:3000/api/user/createjob", profileData, {
+      await axios.post("https://job-portal-3-ensm.onrender.com/api/user/createjob", profileData, {
         headers: { "Content-Type": "application/json" },
       });
 

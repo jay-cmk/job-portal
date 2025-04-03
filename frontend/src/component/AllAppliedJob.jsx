@@ -9,7 +9,7 @@ const AllAppliedJobs = () => {
   useEffect(() => {
     const fetchAppliedJobs = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/apply/applications");
+        const response = await axios.get("https://job-portal-3-ensm.onrender.com/api/apply/applications");
 
         // console.log("API Response:", response.data); 
 

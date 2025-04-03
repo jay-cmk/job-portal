@@ -26,7 +26,7 @@ const RecruiterProfile = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/recruiter/recruiterjob",
+        "https://job-portal-3-ensm.onrender.com/api/recruiter/recruiterjob",
         profileData,
         {
           headers: { "Content-Type": "application/json" },
